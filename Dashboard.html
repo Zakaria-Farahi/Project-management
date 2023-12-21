@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/style.css">
 	<link rel="icon" type="image/x-icon" href="./img/AMZ1.svg">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-dfFn9kpSbp16YI8tf6REULQeR9J00FjGT3KEC2EBI52i1jIb3Zs8PymCWMbfpNHb" crossorigin="anonymous">
     <title>AMZ Dashboard</title>
 </head>
 <body>
@@ -268,90 +269,13 @@
               </div>
             </div>
         </div>
-        <div class=" mt-14 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-         <div class="bg-white p-4 rounded-lg shadow-md">
-            <table class="w-full mb-14">
-                <thead>
-                    <tr>
-                        <th class="py-2 px-4 border-b"></th>
-                        <th class="py-2 px-4 border-b">Admin</th>
-                        <th class="py-2 px-4 border-b">Project Name</th>
-                        <th class="py-2 px-4 border-b">Progress</th>
-                        <th class="py-2 px-4 border-b">Deadline</th>
-                        <th class="py-2 px-4 border-b">Remove</th>
-                        <th class="py-2 px-4 border-b">Add Task</th>
-                    </tr>
-                </thead>
-                <tbody>
-                   <!-- Row 1 -->
-                  <tr>
-                     <td class="py-3 border-b text-center cursor-pointer"><svg class="inline align-text-top mr-3" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                        <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"></path>
-                     </svg></td>
-                     <td class="more py-3 px-4 border-b text-center">Ella Johnson</td>
-                     <td class="py-3 px-4 border-b text-center">Project C</td>
-                     <td class="py-3 px-4 border-b text-center">90%</td>
-                     <td class="py-3 px-4 border-b text-center text-red-500">February 28, 2024</td>
-                     <td class="py-3 px-4 border-b text-center text-red-500">
-                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
-                        Remove
-                        </button>
-                     </td>
-                     <td class="py-3 px-4 border-b text-center -red-500">
-                        <button class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full">
-                        Add Task
-                        </button>
-                     </td>
-                  </tr>
-
-                  <!-- Row 2 -->
-                  <tr>
-                     <td class="more py-3 border-b text-center cursor-pointer"><svg class="inline align-text-top mr-3" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                        <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"></path>
-                     </svg></td>
-                     <td class="py-3 px-4 border-b text-center">Alex Williams</td>
-                     <td class="py-3 px-4 border-b text-center">Project D</td>
-                     <td class="py-3 px-4 border-b text-center">30%</td>
-                     <td class="py-3 px-4 border-b text-center text-red-500">March 10, 2024</td>
-                     <td class="py-3 px-4 border-b text-center text-red-500">
-                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
-                        Remove
-                        </button>
-                     </td>
-                     <td class="py-3 px-4 border-b text-center -red-500">
-                        <button class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full">
-                        Add Task
-                        </button>
-                     </td>
-                  </tr>
-
-                  <!-- Row 3 -->
-                  <tr>
-                     <td class="more py-3 border-b text-center cursor-pointer "><svg class="inline align-text-top mr-3" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                        <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"></path>
-                     </svg></td>
-                     <td class="py-3 px-4 border-b text-center">Oliver Davis</td>
-                     <td class="py-3 px-4 border-b text-center">Project E</td>
-                     <td class="py-3 px-4 border-b text-center">60%</td>
-                     <td class="py-3 px-4 border-b text-center text-red-500">April 5, 2024</td>
-                     <td class="py-3 px-4 border-b text-center text-red-500">
-                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
-                        Remove
-                        </button>
-                     </td>
-                     <td class="py-3 px-4 border-b text-center -red-500">
-                        <button class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full">
-                        Add Task
-                        </button>
-                     </td>
-                  </tr>
-
-                    <!-- Add more rows as needed -->
-                </tbody>
-            </table>
+        <div class=" m-10 p-10 grid grid-cols-4 gap-4">
+            <div id="ProjContainer" class="md:col-span-3 col-span-4 grid grid-cols-3 gap-4 md:mr-10">
+            </div>
+            <div class="col-start-4 bg-white rounded-lg shadow border border-gray-200 hidden md:block">
+               <h1 class="p-5 text-2xl">Evenment : </h1>
+            </div>
         </div>
-                    
-      </div>
       </div>
       <div id="projectPopup" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex items-center justify-center">
          <!-- component -->
@@ -368,12 +292,20 @@
                         </div>
                      </div>
                      <div class="px-5 pb-5">
+                        <div id="uploadedImage" class="flex items-center justify-center w-full">
+                           <label id="dropLabel" for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50  hover:bg-gray-100 dark:border-gray-600">
+                              <div class="flex flex-col items-center justify-center pt-5 pb-6 w-fit">
+                                 <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                                 </svg>
+                                 <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                                 <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                              </div>
+                              <input id="dropzone-file" type="file" class="hidden" />
+                           </label>
+                        </div> 
                         <input  placeholder="Title" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400">
                         <input  placeholder="Description" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"> 
-                        <div class="flex mt-2">
-                           <div class="flex-grow w-1/4 pr-2"><label for="StartDate" >Start date : </label><input name="Start" id="StartDate"  placeholder="Start Date" type="date" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"></div>
-                           <div class="flex-grow"><label for="EndDate" >End Date : </label><input id="EndDate" placeholder="Deadline" type="date" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"></div>
-                        </div>
                      </div>
                      
                      <hr class="mt-4">
