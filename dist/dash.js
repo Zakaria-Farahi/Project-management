@@ -4,7 +4,15 @@ $(document).ready(function() {
         $(this).siblings().removeClass('active').children("a").removeClass("bg-mainColor").addClass("hover:bg-gray-100");
 
         // Add active class and update styles for the clicked item
-        $(this).addClass('active').children("a").addClass("bg-mainColor").removeClass("hover:bg-gray-100");
+        var spanText = $(this).children('a').children("span").text();
+        console.log(spanText);
+        var mainMenu = $("aside").siblings('[id="' + spanText + '"]');
+        console.log(mainMenu);
+        mainMenu.removeClass("hidden");
+        //all siblings of mainMenu except aside and nav will be hidden
+        mainMenu.siblings().not("aside").not("nav").addClass("hidden");
+
+
     });
 });
 
