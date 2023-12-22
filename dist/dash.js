@@ -77,7 +77,7 @@ $(document).ready(function () {
           var projectElement = $(`
           <!-- Project ${randomNumber} -->
           <div class="col-span-3 Proj">
-            <a href="#"  class="flex flex-row items-center  bg-white border border-gray-200 rounded-lg shadow  hover:bg-gray-100 ">
+            <a href="#"  class="flex flex-col md:flex-row items-center  bg-white border border-gray-200 rounded-lg shadow  hover:bg-gray-100 ">
               <div class="relative group remove-Proj">
                 <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="${e.target.result}" alt="">
                 <div class="absolute inset-0 bg-red-500 opacity-0 hover:opacity-50 transition-opacity group-hover:opacity-50 flex items-center justify-center">
@@ -274,12 +274,28 @@ $(document).ready(function() {
     reader.onload = function(e) {
       // Display the image preview above the form
       $('#dropLabel').addClass('hidden');
-      $('#uploadedImage').prepend('<img src="' + e.target.result + '" class="max-w-md mx-auto" alt="Uploaded Image" />');
+      $('#uploadedImage').prepend('<img src="' + e.target.result + '" class="md:max-w-md max-w-xs mx-auto" alt="Uploaded Image" />');
     }
     reader.readAsDataURL(file);
   });
 });
 
+$(document).ready(function() {
+  // jQuery for showing/hiding the menu
+  $('#menuButton').on('click', function() {
+    $('#menuDropdown').toggleClass('hidden');
+  });
+
+  // Close the menu if you click outside of it
+  $(document).on('click', function(e) {
+    var menuDropdown = $('#menuDropdown');
+    var menuButton = $('#menuButton');
+
+    if (!menuDropdown.is(e.target) && !menuButton.is(e.target) && menuDropdown.has(e.target).length === 0 && menuButton.has(e.target).length === 0) {
+      menuDropdown.addClass('hidden');
+    }
+  });
+});
 
 
 
@@ -313,4 +329,3 @@ const tasksData = [
     });
   });
   
-

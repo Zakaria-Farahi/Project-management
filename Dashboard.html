@@ -1,345 +1,1273 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./dist/style.css">
-	<link rel="icon" type="image/x-icon" href="./img/AMZ1.svg">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-dfFn9kpSbp16YI8tf6REULQeR9J00FjGT3KEC2EBI52i1jIb3Zs8PymCWMbfpNHb" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/style.css" />
+    <link rel="icon" type="image/x-icon" href="./img/AMZ1.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha384-dfFn9kpSbp16YI8tf6REULQeR9J00FjGT3KEC2EBI52i1jIb3Zs8PymCWMbfpNHb"
+      crossorigin="anonymous"
+    />
     <title>AMZ Dashboard</title>
-</head>
-<body>
-
-
-    <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-        <div class="px-3 py-3 lg:px-5 lg:pl-3">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center justify-start rtl:justify-end">
-              <button id="toggleSidebarBtn" data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-                  <span class="sr-only">Open sidebar</span>
-                  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                     <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
-                  </svg>
-               </button>
-              <a href="" class="flex ms-2 md:me-24">
-                <img src="./img/AMZ1.svg" class="h-8 me-3" alt="AMZ Logo" />
-                <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">FuTure</span>
-              </a>
-            </div>
-            <div class="flex items-center">
-                <div class="flex items-center ms-3">
-                  <div>
-                    <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
-                      <span class="sr-only">Open user menu</span>
-                      <img class="w-8 h-8 rounded-full" src="./img/profile-image-2.png" alt="user photo">
-                    </button>
-                  </div>
-                  <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
-                    <div class="px-4 py-3" role="none">
-                      <p class="text-sm text-gray-900 dark:text-white" role="none">
-                        Zakaria Farahi
-                      </p>
-                      <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
-                        zakariafarahi521@gmail.com
-                      </p>
-                    </div>
-                    <ul class="py-1" role="none">
-                      <li>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Dashboard</a>
-                      </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Settings</a>
-                      </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Earnings</a>
-                      </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+  </head>
+  <body>
+    <nav
+      class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+    >
+      <div class="px-3 py-3 lg:px-5 lg:pl-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center justify-start rtl:justify-end">
+            <button
+              id="toggleSidebarBtn"
+              data-drawer-target="logo-sidebar"
+              data-drawer-toggle="logo-sidebar"
+              aria-controls="logo-sidebar"
+              type="button"
+              class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            >
+              <span class="sr-only">Open sidebar</span>
+              <svg
+                class="w-6 h-6"
+                aria-hidden="true"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"
+                  d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+                ></path>
+              </svg>
+            </button>
+            <a href="" class="flex ms-2 md:me-24">
+              <img src="./img/AMZ1.svg" class="h-8 me-3" alt="AMZ Logo" />
+              <span
+                class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white"
+                >FuTure</span
+              >
+            </a>
+          </div>
+          <div class="flex items-center">
+            <div class="flex items-center ms-3">
+              <div>
+                <button
+                  type="button"
+                  class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                  aria-expanded="false"
+                  data-dropdown-toggle="dropdown-user"
+                >
+                  <span class="sr-only">Open user menu</span>
+                  <img
+                    class="w-8 h-8 rounded-full"
+                    src="./img/profile-image-2.png"
+                    alt="user photo"
+                  />
+                </button>
               </div>
+              <div
+                class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+                id="dropdown-user"
+              >
+                <div class="px-4 py-3" role="none">
+                  <p class="text-sm text-gray-900 dark:text-white" role="none">
+                    Zakaria Farahi
+                  </p>
+                  <p
+                    class="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
+                    role="none"
+                  >
+                    zakariafarahi521@gmail.com
+                  </p>
+                </div>
+                <ul class="py-1" role="none">
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                      role="menuitem"
+                      >Dashboard</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                      role="menuitem"
+                      >Settings</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                      role="menuitem"
+                      >Earnings</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                      role="menuitem"
+                      >Sign out</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
-      
-      <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
-         <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
-            <ul id="sidebar" class="space-y-2 font-medium">
-               <li>
-                  <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                     <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
-                        <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
-                        <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
-                     </svg>
-                     <span class="ms-3">Dashboard</span>
-                  </a>
-               </li>
-               <li>
-                  <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
-                        <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z"/>
-                     </svg>
-                     <span class="flex-1 ms-3 whitespace-nowrap">Projects</span>
-                  </a>
-               </li>
-               <li>
-                  <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z"/>
-                     </svg>
-                     <span class="flex-1 ms-3 whitespace-nowrap">Inbox</span>
-                     <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
-                  </a>
-               </li>
-               <li>
-                  <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
-                        <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"/>
-                     </svg>
-                     <span class="flex-1 ms-3 whitespace-nowrap">Users</span>
-                  </a>
-               </li>
-               <li>
-                  <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 48 48">
-                           <path d="M24,4C12.972,4,4,12.972,4,24c0,3.186,0.77,6.343,2.232,9.172l-2.139,7.657c-0.242,0.867,0.003,1.802,0.64,2.439	c0.475,0.475,1.115,0.732,1.771,0.732c0.224,0,0.449-0.03,0.67-0.092l7.661-2.139C17.662,43.23,20.817,44,24,44	c11.028,0,20-8.972,20-20S35.028,4,24,4z"></path>
-                        </svg>
-                     <span class="flex-1 ms-3 whitespace-nowrap">Chat</span>
-                  </a>
-               </li>
-               <li>
-                  <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 48 48">
-                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M37,43l-13-6l-13,6V9c0-2.2,1.8-4,4-4h18c2.2,0,4,1.8,4,4V43z"></path>
-                     </svg>
-                     <span class="flex-1 ms-3 whitespace-nowrap">favorites</span>
-                  </a>
-               </li>
-               <li>
-                  <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"/>
-                     </svg>
-                     <span class="flex-1 ms-3 whitespace-nowrap">Sign out</span>
-                  </a>
-               </li>
-            </ul>
-         </div>
-      </aside>
-      
-      <div id="Dashboard" class="p-4 hidden sm:ml-64 mt-14 bg-gray-50">
-         <div class="flex items-center my-4 justify-between ">
-            <div>
-                <h1 class="text-2xl font-semibold text-gray-800 dark:text-white">Dashboard</h1>
-            </div>
-            <div class="ml-4">
-                <select id="timePeriod" name="timePeriod" class="p-2 border rounded-md">
-                    <option value="30">Last 30 days</option>
-                    <option value="7">Last 7 days</option>
-                    <option value="1">Yesterday</option>
-                    <option value="0">Today</option>
-                    <option value="365">This year</option>
-                    <option value="365">Last year</option>
-                </select>
-            </div>
-        </div>
-            <div class="p-4 mt-10">
-               <div class="grid grid-cols-3 gap-4 mb-4">
-                  <div class="rounded-2xl bg-white p-5">
-                     <h5 class="font-sans mb-2">Projects : </h5>
-                     <div class="relative pt-1">
-                        <div class="flex mb-2 items-center justify-between">
-                          <div>
-                            <span class="text-xs font-semibold inline-block py-1 px-4 mb-3 uppercase rounded-r-full text-teal-600 bg-teal-200">
-                              <span class="font-bold text-2xl">80 </span>/ 100
-                            </span>
-                          </div>
-                        </div>
-                        <div class="flex h-2 mb-4 overflow-hidden text-xs bg-gray-50">
-                          <div style="width:70%" class="flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-500"></div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="rounded-2xl bg-white p-5">
-                     <h5 class="font-sans mb-2">Tasks : </h5>
-                     <div class="relative pt-1">
-                        <div class="flex mb-2 items-center justify-between">
-                          <div>
-                            <span class="text-xs font-semibold inline-block py-1 px-4 mb-3 uppercase rounded-r-full text-purple-600 bg-purple-200">
-                              <span class="font-bold text-2xl">120 </span>/ 1000
-                            </span>
-                          </div>
-                        </div>
-                        <div class="flex h-2 mb-4 overflow-hidden text-xs bg-gray-50">
-                          <div style="width:70%" class="flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-600"></div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="rounded-2xl bg-white p-5">
-                     <h5 class="font-sans mb-2">Users : </h5>
-                     <div class="relative pt-1">
-                        <div class="flex mb-2 items-center justify-between">
-                          <div>
-                            <span class="text-xs font-semibold inline-block py-1 px-4 mb-3 uppercase rounded-r-full text-red-600 bg-red-200">
-                              <span class="font-bold text-2xl">40 </span>/ 120
-                            </span>
-                          </div>
-                        </div>
-                        <div class="flex h-2 mb-4 overflow-hidden text-xs bg-gray-50">
-                          <div style="width:50%" class="flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-600"></div>
-                        </div>
-                      </div>
-                  </div>
-               </div>
-            </div>
-            <canvas class="mt-10 bg-white p-4 rounded-xl" id="tasksChart" width="200"></canvas>
-            <div class=" mt-14 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-               <div class="bg-white p-4 rounded-lg shadow-md">
-                  <table class="w-full mb-14">
-                      <thead>
-                          <tr>
-                              <th class="py-2 px-4 border-b">Admin</th>
-                              <th class="py-2 px-4 border-b">Project Name</th>
-                              <th class="py-2 px-4 border-b">Progress</th>
-                              <th class="py-2 px-4 border-b">Deadline</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                         <!-- Row 1 -->
-                        <tr>
-                           <td class="py-3 px-4 border-b text-center">Ella Johnson</td>
-                           <td class="py-3 px-4 border-b text-center">Project C</td>
-                           <td class="py-3 px-4 border-b text-center">90%</td>
-                           <td class="py-3 px-4 border-b text-center text-red-500">February 28, 2024</td>
-                        </tr>
-
-                        <!-- Row 2 -->
-                        <tr>
-                           <td class="py-3 px-4 border-b text-center">Alex Williams</td>
-                           <td class="py-3 px-4 border-b text-center">Project D</td>
-                           <td class="py-3 px-4 border-b text-center">30%</td>
-                           <td class="py-3 px-4 border-b text-center text-red-500">March 10, 2024</td>
-                        </tr>
-
-                        <!-- Row 3 -->
-                        <tr>
-                           <td class="py-3 px-4 border-b text-center">Oliver Davis</td>
-                           <td class="py-3 px-4 border-b text-center">Project E</td>
-                           <td class="py-3 px-4 border-b text-center">60%</td>
-                           <td class="py-3 px-4 border-b text-center text-red-500">April 5, 2024</td>
-                        </tr>
-
-                        <!-- Row 4 -->
-                        <tr>
-                           <td class="py-3 px-4 border-b text-center">Sophia Brown</td>
-                           <td class="py-3 px-4 border-b text-center">Project F</td>
-                           <td class="py-3 px-4 border-b text-center">80%</td>
-                           <td class="py-3 px-4 border-b text-center text-red-500">May 20, 2024</td>
-                        </tr>
-
-                        <!-- Row 5 -->
-                        <tr>
-                           <td class="py-3 px-4 border-b text-center">Daniel Miller</td>
-                           <td class="py-3 px-4 border-b text-center">Project G</td>
-                           <td class="py-3 px-4 border-b text-center">45%</td>
-                           <td class="py-3 px-4 border-b text-center text-red-500">June 15, 2024</td>
-                        </tr>
-
-                          <!-- Add more rows as needed -->
-                      </tbody>
-                  </table>
-              </div>
-                          
-            </div>
-
       </div>
-      <div id="Projects" class="p-4 sm:ml-64 mt-14 bg-gray-50 h-screen">
-         <div class="flex items-center justify-between ">
-            <div>
-                <h1 class="text-2xl font-semibold text-gray-800 dark:text-white">Projects : </h1>
-            </div>
-            <div class="">
-               <div class="flex items-center justify-center">
-                  <div class="py-2 px-3 bg-mainColor rounded-xl shadow-lg flex items-center justify-center ring ring-mainColor ring-offset-2 animate-pulse">
-                      <button id="addPrj" class="text-white text-sm">Add Project +</button>
-                  </div>
-              </div>
-            </div>
+    </nav>
+
+    <aside
+      id="logo-sidebar"
+      class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+      aria-label="Sidebar"
+    >
+      <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+        <ul id="sidebar" class="space-y-2 font-medium">
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <svg
+                class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 21"
+              >
+                <path
+                  d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"
+                />
+                <path
+                  d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"
+                />
+              </svg>
+              <span class="ms-3">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <svg
+                class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z"
+                />
+              </svg>
+              <span class="flex-1 ms-3 whitespace-nowrap">Projects</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <svg
+                class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 18"
+              >
+                <path
+                  d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"
+                />
+              </svg>
+              <span class="flex-1 ms-3 whitespace-nowrap">Users</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <svg
+                class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M24,4C12.972,4,4,12.972,4,24c0,3.186,0.77,6.343,2.232,9.172l-2.139,7.657c-0.242,0.867,0.003,1.802,0.64,2.439	c0.475,0.475,1.115,0.732,1.771,0.732c0.224,0,0.449-0.03,0.67-0.092l7.661-2.139C17.662,43.23,20.817,44,24,44	c11.028,0,20-8.972,20-20S35.028,4,24,4z"
+                ></path>
+              </svg>
+              <span class="flex-1 ms-3 whitespace-nowrap">Chat</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <svg
+                class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 16"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"
+                />
+              </svg>
+              <span class="flex-1 ms-3 whitespace-nowrap">Sign out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <div id="Dashboard" class="p-4 hidden sm:ml-64 mt-14 bg-gray-50">
+      <div class="flex items-center my-4 justify-between">
+        <div>
+          <h1 class="text-2xl font-semibold text-gray-800 dark:text-white">
+            Dashboard
+          </h1>
         </div>
-        <div class=" m-10 p-10 grid grid-cols-4 gap-4">
-            <div id="ProjContainer" class="md:col-span-3 col-span-4 grid grid-cols-3 gap-4 md:mr-10">
-            </div>
-            <div class="col-start-4 bg-white rounded-lg shadow border border-gray-200 hidden md:block">
-               <h1 class="p-5 text-2xl">Evenment : </h1>
-            </div>
+        <div class="ml-4">
+          <select
+            id="timePeriod"
+            name="timePeriod"
+            class="p-2 border rounded-md"
+          >
+            <option value="30">Last 30 days</option>
+            <option value="7">Last 7 days</option>
+            <option value="1">Yesterday</option>
+            <option value="0">Today</option>
+            <option value="365">This year</option>
+            <option value="365">Last year</option>
+          </select>
         </div>
       </div>
-      <div id="projectPopup" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex items-center justify-center">
-         <!-- component -->
-         <div class="flex h-screen">
-            <div class="m-auto">
-               <div>
-                  <div class="mt-5 bg-white rounded-lg shadow">
-                     <div class="flex">
-                        <div class="flex-1 py-5 pl-5 overflow-hidden">
-                           <svg class="inline align-text-top mr-3" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                              <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/>
-                           </svg>
-                           <h1 class="inline text-2xl font-semibold leading-none">Project</h1>
-                        </div>
-                     </div>
-                     <div class="px-5 pb-5">
-                        <div id="uploadedImage" class="flex items-center justify-center w-full">
-                           <label id="dropLabel" for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50  hover:bg-gray-100 dark:border-gray-600">
-                              <div class="flex flex-col items-center justify-center pt-5 pb-6 w-fit">
-                                 <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
-                                 </svg>
-                                 <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                                 <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-                              </div>
-                              <input id="dropzone-file" type="file" class="hidden" />
-                           </label>
-                        </div> 
-                        <input  placeholder="Title" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400">
-                        <input  placeholder="Description" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"> 
-                     </div>
-                     
-                     <hr class="mt-4">
-                     <div class="flex flex-row-reverse p-3">
-                        <div class="flex-initial pl-3">
-                           <button id="saveProjectBtn" type="button" class="flex items-center px-5 py-2.5 font-medium tracking-wide text-white capitalize   bg-mainColor rounded-md hover:bg-gray-800  focus:outline-none focus:bg-gray-900  transition duration-300 transform active:scale-95 ease-in-out">
-                              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF">
-                                 <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                 <path d="M5 5v14h14V7.83L16.17 5H5zm7 13c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-8H6V6h9v4z" opacity=".3"></path>
-                                 <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm2 16H5V5h11.17L19 7.83V19zm-7-7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zM6 6h9v4H6z"></path>
-                              </svg>
-                              <span class="pl-2 mx-1">Save</span>
-                           </button>
-                        </div>
-                        <div class="flex-initial">
-                           <button id="exitAddPrj" type="button" class="flex items-center px-5 py-2.5 font-medium tracking-wide text-black capitalize rounded-md  hover:bg-red-200 hover:fill-current hover:text-red-600  focus:outline-none  transition duration-300 transform active:scale-95 ease-in-out">
-                              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px">
-                                 <path d="M0 0h24v24H0V0z" fill="none"></path>
-                                 <path d="M8 9h8v10H8z" opacity=".3"></path>
-                                 <path d="M15.5 4l-1-1h-5l-1 1H5v2h14V4zM6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9z"></path>
-                              </svg>
-                              <span class="pl-2 mx-1">Delete</span>
-                           </button>
-                        </div>
-                     </div>
-                  </div>
-                  
-               </div>
+      <div class="p-4 mt-10">
+        <div class="grid grid-cols-3 gap-4 mb-4">
+          <div class="rounded-2xl bg-white p-5">
+            <h5 class="font-sans mb-2">Projects :</h5>
+            <div class="relative pt-1">
+              <div class="flex mb-2 items-center justify-between">
+                <div>
+                  <span
+                    class="text-xs font-semibold inline-block py-1 px-4 mb-3 uppercase rounded-r-full text-teal-600 bg-teal-200"
+                  >
+                    <span class="font-bold text-2xl">80 </span>/ 100
+                  </span>
+                </div>
+              </div>
+              <div class="flex h-2 mb-4 overflow-hidden text-xs bg-gray-50">
+                <div
+                  style="width: 70%"
+                  class="flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-500"
+                ></div>
+              </div>
             </div>
-         </div>
-      </div>        
-      
+          </div>
+          <div class="rounded-2xl bg-white p-5">
+            <h5 class="font-sans mb-2">Tasks :</h5>
+            <div class="relative pt-1">
+              <div class="flex mb-2 items-center justify-between">
+                <div>
+                  <span
+                    class="text-xs font-semibold inline-block py-1 px-4 mb-3 uppercase rounded-r-full text-purple-600 bg-purple-200"
+                  >
+                    <span class="font-bold text-2xl">120 </span>/ 1000
+                  </span>
+                </div>
+              </div>
+              <div class="flex h-2 mb-4 overflow-hidden text-xs bg-gray-50">
+                <div
+                  style="width: 70%"
+                  class="flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-600"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl bg-white p-5">
+            <h5 class="font-sans mb-2">Users :</h5>
+            <div class="relative pt-1">
+              <div class="flex mb-2 items-center justify-between">
+                <div>
+                  <span
+                    class="text-xs font-semibold inline-block py-1 px-4 mb-3 uppercase rounded-r-full text-red-600 bg-red-200"
+                  >
+                    <span class="font-bold text-2xl">40 </span>/ 120
+                  </span>
+                </div>
+              </div>
+              <div class="flex h-2 mb-4 overflow-hidden text-xs bg-gray-50">
+                <div
+                  style="width: 50%"
+                  class="flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-600"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <canvas
+        class="mt-10 bg-white p-4 rounded-xl"
+        id="tasksChart"
+        width="200"
+      ></canvas>
+      <div class="mt-14 mb-4 rounded bg-gray-50 dark:bg-gray-800">
+        <div class="bg-white p-4 rounded-lg shadow-md">
+          <table class="w-full mb-14">
+            <thead>
+              <tr>
+                <th class="py-2 px-4 border-b">Admin</th>
+                <th class="py-2 px-4 border-b">Project Name</th>
+                <th class="py-2 px-4 border-b">Progress</th>
+                <th class="py-2 px-4 border-b">Deadline</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1 -->
+              <tr>
+                <td class="py-3 px-4 border-b text-center">Ella Johnson</td>
+                <td class="py-3 px-4 border-b text-center">Project C</td>
+                <td class="py-3 px-4 border-b text-center">90%</td>
+                <td class="py-3 px-4 border-b text-center text-red-500">
+                  February 28, 2024
+                </td>
+              </tr>
 
-   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-   <script src="./dist/jquery-3.7.1.min.js"></script>
+              <!-- Row 2 -->
+              <tr>
+                <td class="py-3 px-4 border-b text-center">Alex Williams</td>
+                <td class="py-3 px-4 border-b text-center">Project D</td>
+                <td class="py-3 px-4 border-b text-center">30%</td>
+                <td class="py-3 px-4 border-b text-center text-red-500">
+                  March 10, 2024
+                </td>
+              </tr>
+
+              <!-- Row 3 -->
+              <tr>
+                <td class="py-3 px-4 border-b text-center">Oliver Davis</td>
+                <td class="py-3 px-4 border-b text-center">Project E</td>
+                <td class="py-3 px-4 border-b text-center">60%</td>
+                <td class="py-3 px-4 border-b text-center text-red-500">
+                  April 5, 2024
+                </td>
+              </tr>
+
+              <!-- Row 4 -->
+              <tr>
+                <td class="py-3 px-4 border-b text-center">Sophia Brown</td>
+                <td class="py-3 px-4 border-b text-center">Project F</td>
+                <td class="py-3 px-4 border-b text-center">80%</td>
+                <td class="py-3 px-4 border-b text-center text-red-500">
+                  May 20, 2024
+                </td>
+              </tr>
+
+              <!-- Row 5 -->
+              <tr>
+                <td class="py-3 px-4 border-b text-center">Daniel Miller</td>
+                <td class="py-3 px-4 border-b text-center">Project G</td>
+                <td class="py-3 px-4 border-b text-center">45%</td>
+                <td class="py-3 px-4 border-b text-center text-red-500">
+                  June 15, 2024
+                </td>
+              </tr>
+
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div id="Projects" class="p-4 hidden sm:ml-64 mt-14 bg-gray-50 h-screen">
+      <div class="flex items-center justify-between">
+        <div>
+          <h1 class="text-2xl font-semibold text-gray-800 dark:text-white">
+            Projects :
+          </h1>
+        </div>
+        <div class="">
+          <div class="flex items-center justify-center">
+            <div
+              class="py-2 px-3 bg-mainColor rounded-xl shadow-lg flex items-center justify-center ring ring-mainColor ring-offset-2 animate-pulse"
+            >
+              <button id="addPrj" class="text-white text-sm">
+                Add Project +
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="m-3 p-3 mt-10 md:m-10 md:p-10 grid grid-cols-4 gap-4">
+        <div
+          id="ProjContainer"
+          class="md:col-span-3 col-span-4 grid grid-cols-3 gap-4 md:mr-10"
+        ></div>
+        <div
+          class="col-start-4 bg-white rounded-lg shadow border border-gray-200 hidden md:block"
+        >
+          <h1 class="p-5 text-2xl">Evenment :</h1>
+        </div>
+      </div>
+    </div>
+    <div id="Users" class="p-4 hidden sm:ml-64 mt-14 bg-gray-50 h-screen">
+      <div class="flex items-center justify-between">
+        <div>
+          <h1 class="text-2xl font-semibold text-gray-800 dark:text-white">
+            Users :
+          </h1>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="ml-10 space-x-8 lg:ml-40">
+            <button
+              class="flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white focus:outline-none focus:ring hover:bg-blue-700"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                enable-background="new 0 0 50 50"
+                height="25px"
+                id="Layer_1"
+                version="1.1"
+                viewBox="0 0 50 50"
+                width="25px"
+                xml:space="preserve"
+              >
+                <rect fill="none" height="10" width="10" />
+                <line
+                  fill="none"
+                  stroke="#ffffff"
+                  stroke-miterlimit="10"
+                  stroke-width="4"
+                  x1="9"
+                  x2="41"
+                  y1="25"
+                  y2="25"
+                />
+                <line
+                  fill="none"
+                  stroke="#ffffff"
+                  stroke-miterlimit="10"
+                  stroke-width="4"
+                  x1="25"
+                  x2="25"
+                  y1="9"
+                  y2="41"
+                />
+              </svg>
+
+              Add User
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="overflow-y-hidden rounded-lg border mt-20">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr
+                class="bg-blue-600 text-left text-xs font-semibold uppercase tracking-widest text-white"
+              >
+                <th class="px-5 py-3">ID</th>
+                <th class="px-5 py-3">Full Name</th>
+                <th class="px-5 py-3">User Role</th>
+                <th class="px-5 py-3">Created at</th>
+                <th class="px-5 py-3">Status</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-500">
+              <tr>
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <p class="whitespace-no-wrap">3</p>
+                </td>
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <div class="flex items-center">
+                    <div class="h-10 w-10 flex-shrink-0">
+                      <img
+                        class="h-full w-full rounded-full"
+                        src="/images/-ytzjgg6lxK1ICPcNfXho.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="ml-3">
+                      <p class="whitespace-no-wrap">Besique Monroe</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <p class="whitespace-no-wrap">Administrator</p>
+                </td>
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <p class="whitespace-no-wrap">Sep 28, 2022</p>
+                </td>
+
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <span
+                    class="rounded-full bg-green-200 px-3 py-1 text-xs font-semibold text-green-900"
+                    >Active</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <p class="whitespace-no-wrap">7</p>
+                </td>
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <div class="flex items-center">
+                    <div class="h-10 w-10 flex-shrink-0">
+                      <img
+                        class="h-full w-full rounded-full"
+                        src="/images/ddHJYlQqOzyOKm4CSCY8o.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="ml-3">
+                      <p class="whitespace-no-wrap">James Cavier</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <p class="whitespace-no-wrap">Author</p>
+                </td>
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <p class="whitespace-no-wrap">Sep 28, 2022</p>
+                </td>
+
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <span
+                    class="rounded-full bg-green-200 px-3 py-1 text-xs font-semibold text-green-900"
+                    >Active</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <p class="whitespace-no-wrap">12</p>
+                </td>
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <div class="flex items-center">
+                    <div class="h-10 w-10 flex-shrink-0">
+                      <img
+                        class="h-full w-full rounded-full"
+                        src="/images/oPf2b7fqx5xa3mo68dYHo.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="ml-3">
+                      <p class="whitespace-no-wrap">Elvis Son</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <p class="whitespace-no-wrap">Editor</p>
+                </td>
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <p class="whitespace-no-wrap">Sep 28, 2022</p>
+                </td>
+
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <span
+                    class="rounded-full bg-yellow-200 px-3 py-1 text-xs font-semibold text-yellow-900"
+                    >Suspended</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="bg-white px-5 py-5 text-sm">
+                  <p class="whitespace-no-wrap">66</p>
+                </td>
+                <td class="bg-white px-5 py-5 text-sm">
+                  <div class="flex items-center">
+                    <div class="h-10 w-10 flex-shrink-0">
+                      <img
+                        class="h-full w-full rounded-full"
+                        src="/images/fR71TFZIDTv2jhvKsOMhC.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="ml-3">
+                      <p class="whitespace-no-wrap">Dana White</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="bg-white px-5 py-5 text-sm">
+                  <p class="whitespace-no-wrap">Administrator</p>
+                </td>
+                <td class="bg-white px-5 py-5 text-sm">
+                  <p class="whitespace-no-wrap">Sep 28, 2022</p>
+                </td>
+
+                <td class="bg-white px-5 py-5 text-sm">
+                  <span
+                    class="rounded-full bg-red-200 px-3 py-1 text-xs font-semibold text-red-900"
+                    >Inactive</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <p class="whitespace-no-wrap">12</p>
+                </td>
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <div class="flex items-center">
+                    <div class="h-10 w-10 flex-shrink-0">
+                      <img
+                        class="h-full w-full rounded-full"
+                        src="/images/oPf2b7fqx5xa3mo68dYHo.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="ml-3">
+                      <p class="whitespace-no-wrap">Elvis Son</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <p class="whitespace-no-wrap">Editor</p>
+                </td>
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <p class="whitespace-no-wrap">Sep 28, 2022</p>
+                </td>
+
+                <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+                  <span
+                    class="rounded-full bg-yellow-200 px-3 py-1 text-xs font-semibold text-yellow-900"
+                    >Suspended</span
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          class="flex flex-col items-center border-t bg-white px-5 py-5 sm:flex-row sm:justify-between"
+        >
+          <span class="text-xs text-gray-600 sm:text-sm">
+            Showing 1 to 5 of 12 Entries
+          </span>
+          <div class="mt-2 inline-flex sm:mt-0">
+            <button
+              class="mr-2 h-12 w-12 rounded-full border text-sm font-semibold text-gray-600 transition duration-150 hover:bg-gray-100"
+            >
+              Prev
+            </button>
+            <button
+              class="h-12 w-12 rounded-full border text-sm font-semibold text-gray-600 transition duration-150 hover:bg-gray-100"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Chat" class="md:p-4 px-0 sm:ml-64 mt-14 bg-gray-50 h-screen">
+      <!-- component -->
+      <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <div class="w-1/4 hidden md:block bg-white border-r border-gray-300">
+          <!-- Sidebar Header -->
+          <header
+            class="p-4 border-b border-gray-300 flex justify-between items-center bg-indigo-600 text-white"
+          >
+            <h1 class="text-2xl font-semibold">Chat Web</h1>
+            <div class="relative">
+              <button id="menuButton" class="focus:outline-none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-gray-100"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                  <path
+                    d="M2 10a2 2 0 012-2h12a2 2 0 012 2 2 2 0 01-2 2H4a2 2 0 01-2-2z"
+                  />
+                </svg>
+              </button>
+              <!-- Menu Dropdown -->
+              <div
+                id="menuDropdown"
+                class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg hidden"
+              >
+                <ul class="py-2 px-3">
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-gray-800 hover:text-gray-400"
+                      >Option 1</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-gray-800 hover:text-gray-400"
+                      >Option 2</a
+                    >
+                  </li>
+                  <!-- Add more menu options here -->
+                </ul>
+              </div>
+            </div>
+          </header>
+
+          <!-- Contact List -->
+          <div class="overflow-y-auto h-screen p-3 mb-9 pb-20">
+            <div
+              class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md"
+            >
+              <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img
+                  src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="User Avatar"
+                  class="w-12 h-12 rounded-full"
+                />
+              </div>
+              <div class="flex-1">
+                <h2 class="text-lg font-semibold">Alice</h2>
+                <p class="text-gray-600">Hoorayy!!</p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md"
+            >
+              <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img
+                  src="https://placehold.co/200x/ad922e/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="User Avatar"
+                  class="w-12 h-12 rounded-full"
+                />
+              </div>
+              <div class="flex-1">
+                <h2 class="text-lg font-semibold">Martin</h2>
+                <p class="text-gray-600">
+                  That pizza place was amazing! We should go again sometime. 🍕
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md"
+            >
+              <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img
+                  src="https://placehold.co/200x/2e83ad/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="User Avatar"
+                  class="w-12 h-12 rounded-full"
+                />
+              </div>
+              <div class="flex-1">
+                <h2 class="text-lg font-semibold">Charlie</h2>
+                <p class="text-gray-600">
+                  Hey, do you have any recommendations for a good movie to
+                  watch?
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md"
+            >
+              <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img
+                  src="https://placehold.co/200x/c2ebff/0f0b14.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="User Avatar"
+                  class="w-12 h-12 rounded-full"
+                />
+              </div>
+              <div class="flex-1">
+                <h2 class="text-lg font-semibold">David</h2>
+                <p class="text-gray-600">
+                  I just finished reading a great book! It was so captivating.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md"
+            >
+              <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img
+                  src="https://placehold.co/200x/e7c2ff/7315d1.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="User Avatar"
+                  class="w-12 h-12 rounded-full"
+                />
+              </div>
+              <div class="flex-1">
+                <h2 class="text-lg font-semibold">Ella</h2>
+                <p class="text-gray-600">
+                  What's the plan for this weekend? Anything fun?
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md"
+            >
+              <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img
+                  src="https://placehold.co/200x/ffc2e2/ffdbdb.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="User Avatar"
+                  class="w-12 h-12 rounded-full"
+                />
+              </div>
+              <div class="flex-1">
+                <h2 class="text-lg font-semibold">Fiona</h2>
+                <p class="text-gray-600">
+                  I heard there's a new exhibit at the art museum. Interested?
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md"
+            >
+              <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img
+                  src="https://placehold.co/200x/f83f3f/4f4f4f.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="User Avatar"
+                  class="w-12 h-12 rounded-full"
+                />
+              </div>
+              <div class="flex-1">
+                <h2 class="text-lg font-semibold">George</h2>
+                <p class="text-gray-600">
+                  I tried that new cafe downtown. The coffee was fantastic!
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md"
+            >
+              <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img
+                  src="https://placehold.co/200x/dddddd/999999.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="User Avatar"
+                  class="w-12 h-12 rounded-full"
+                />
+              </div>
+              <div class="flex-1">
+                <h2 class="text-lg font-semibold">Hannah</h2>
+                <p class="text-gray-600">
+                  I'm planning a hiking trip next month. Want to join?
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md"
+            >
+              <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img
+                  src="https://placehold.co/200x/70ff33/501616.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="User Avatar"
+                  class="w-12 h-12 rounded-full"
+                />
+              </div>
+              <div class="flex-1">
+                <h2 class="text-lg font-semibold">Ian</h2>
+                <p class="text-gray-600">
+                  Let's catch up soon. It's been too long!
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md"
+            >
+              <div class="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img
+                  src="https://placehold.co/200x/30916c/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="User Avatar"
+                  class="w-12 h-12 rounded-full"
+                />
+              </div>
+              <div class="flex-1">
+                <h2 class="text-lg font-semibold">Jack</h2>
+                <p class="text-gray-600">
+                  Remember that hilarious joke you told me? I can't stop
+                  laughing!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="flex-1">
+          <!-- Chat Header -->
+          <header class="bg-white p-4 text-gray-700">
+            <h1 class="text-2xl font-semibold">Alice</h1>
+          </header>
+
+          <!-- Chat Messages -->
+          <div class="h-screen overflow-y-auto p-4 pb-36">
+            <!-- Incoming Message -->
+            <div class="flex mb-4 cursor-pointer">
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center mr-2"
+              >
+                <img
+                  src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="User Avatar"
+                  class="w-8 h-8 rounded-full"
+                />
+              </div>
+              <div class="flex max-w-96 bg-white rounded-lg p-3 gap-3">
+                <p class="text-gray-700">Hey Bob, how's it going?</p>
+              </div>
+            </div>
+
+            <!-- Outgoing Message -->
+            <div class="flex justify-end mb-4 cursor-pointer">
+              <div
+                class="flex max-w-96 bg-indigo-500 text-white rounded-lg p-3 gap-3"
+              >
+                <p>
+                  Hi Alice! I'm good, just finished a great book. How about you?
+                </p>
+              </div>
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center ml-2"
+              >
+                <img
+                  src="https://placehold.co/200x/b7a8ff/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="My Avatar"
+                  class="w-8 h-8 rounded-full"
+                />
+              </div>
+            </div>
+
+            <!-- Incoming Message -->
+            <div class="flex mb-4 cursor-pointer">
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center mr-2"
+              >
+                <img
+                  src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="User Avatar"
+                  class="w-8 h-8 rounded-full"
+                />
+              </div>
+              <div class="flex max-w-96 bg-white rounded-lg p-3 gap-3">
+                <p class="text-gray-700">
+                  That book sounds interesting! What's it about?
+                </p>
+              </div>
+            </div>
+
+            <!-- Outgoing Message -->
+            <div class="flex justify-end mb-4 cursor-pointer">
+              <div
+                class="flex max-w-96 bg-indigo-500 text-white rounded-lg p-3 gap-3"
+              >
+                <p>
+                  It's about an astronaut stranded on Mars, trying to survive.
+                  Gripping stuff!
+                </p>
+              </div>
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center ml-2"
+              >
+                <img
+                  src="https://placehold.co/200x/b7a8ff/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="My Avatar"
+                  class="w-8 h-8 rounded-full"
+                />
+              </div>
+            </div>
+
+            <!-- Incoming Message -->
+            <div class="flex mb-4 cursor-pointer">
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center mr-2"
+              >
+                <img
+                  src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="User Avatar"
+                  class="w-8 h-8 rounded-full"
+                />
+              </div>
+              <div class="flex max-w-96 bg-white rounded-lg p-3 gap-3">
+                <p class="text-gray-700">
+                  I'm intrigued! Maybe I'll borrow it from you when you're done?
+                </p>
+              </div>
+            </div>
+
+            <!-- Outgoing Message -->
+            <div class="flex justify-end mb-4 cursor-pointer">
+              <div
+                class="flex max-w-96 bg-indigo-500 text-white rounded-lg p-3 gap-3"
+              >
+                <p>Of course! I'll drop it off at your place tomorrow.</p>
+              </div>
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center ml-2"
+              >
+                <img
+                  src="https://placehold.co/200x/b7a8ff/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="My Avatar"
+                  class="w-8 h-8 rounded-full"
+                />
+              </div>
+            </div>
+
+            <!-- Incoming Message -->
+            <div class="flex mb-4 cursor-pointer">
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center mr-2"
+              >
+                <img
+                  src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="User Avatar"
+                  class="w-8 h-8 rounded-full"
+                />
+              </div>
+              <div class="flex max-w-96 bg-white rounded-lg p-3 gap-3">
+                <p class="text-gray-700">Thanks, you're the best!</p>
+              </div>
+            </div>
+
+            <!-- Outgoing Message -->
+            <div class="flex justify-end mb-4 cursor-pointer">
+              <div
+                class="flex max-w-96 bg-indigo-500 text-white rounded-lg p-3 gap-3"
+              >
+                <p>Anytime! Let me know how you like it. 😊</p>
+              </div>
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center ml-2"
+              >
+                <img
+                  src="https://placehold.co/200x/b7a8ff/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="My Avatar"
+                  class="w-8 h-8 rounded-full"
+                />
+              </div>
+            </div>
+
+            <!-- Incoming Message -->
+            <div class="flex mb-4 cursor-pointer">
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center mr-2"
+              >
+                <img
+                  src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="User Avatar"
+                  class="w-8 h-8 rounded-full"
+                />
+              </div>
+              <div class="flex max-w-96 bg-white rounded-lg p-3 gap-3">
+                <p class="text-gray-700">So, pizza next week, right?</p>
+              </div>
+            </div>
+
+            <!-- Outgoing Message -->
+            <div class="flex justify-end mb-4 cursor-pointer">
+              <div
+                class="flex max-w-96 bg-indigo-500 text-white rounded-lg p-3 gap-3"
+              >
+                <p>Absolutely! Can't wait for our pizza date. 🍕</p>
+              </div>
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center ml-2"
+              >
+                <img
+                  src="https://placehold.co/200x/b7a8ff/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="My Avatar"
+                  class="w-8 h-8 rounded-full"
+                />
+              </div>
+            </div>
+            <!-- Incoming Message -->
+            <div class="flex mb-4 cursor-pointer">
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center mr-2"
+              >
+                <img
+                  src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
+                  alt="User Avatar"
+                  class="w-8 h-8 rounded-full"
+                />
+              </div>
+              <div class="flex max-w-96 bg-white rounded-lg p-3 gap-3">
+                <p class="text-gray-700">Hoorayy!!</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat Input -->
+          <footer
+            class="bg-white border-t border-gray-300 p-4 fixed bottom-0 md:w-3/5 w-full"
+          >
+            <div class="flex items-center">
+              <input
+                type="text"
+                placeholder="Type a message..."
+                class="w-full p-2 rounded-md border border-gray-400 focus:outline-none focus:border-blue-500"
+              />
+              <button
+                class="bg-indigo-500 text-white px-4 py-2 rounded-md ml-2"
+              >
+                Send
+              </button>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div
+      id="projectPopup"
+      class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex items-center justify-center">
+      <!-- component -->
+      <div class="flex h-screen">
+        <div class="m-auto">
+          <div>
+            <div class="mt-5 w-screen bg-white rounded-lg shadow">
+              <div class="flex">
+                <div class="flex-1 py-5 pl-5 overflow-hidden">
+                  <svg
+                    class="inline align-text-top mr-3"
+                    height="24px"
+                    viewBox="0 0 24 24"
+                    width="24px"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#000000"
+                  >
+                    <path
+                      d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"
+                    />
+                  </svg>
+                  <h1 class="inline text-2xl font-semibold leading-none">
+                    Project
+                  </h1>
+                </div>
+              </div>
+              <div class="px-5 pb-5">
+                <div
+                  id="uploadedImage"
+                  class="flex items-center justify-center w-full"
+                >
+                  <label
+                    id="dropLabel"
+                    for="dropzone-file"
+                    class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:border-gray-600"
+                  >
+                    <div
+                      class="flex flex-col items-center justify-center pt-5 pb-6 w-fit"
+                    >
+                      <svg
+                        class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 20 16"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                        />
+                      </svg>
+                      <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                        <span class="font-semibold">Click to upload</span> or
+                        drag and drop
+                      </p>
+                      <p class="text-xs text-gray-500 dark:text-gray-400">
+                        SVG, PNG, JPG or GIF (MAX. 800x400px)
+                      </p>
+                    </div>
+                    <input id="dropzone-file" type="file" class="hidden" />
+                  </label>
+                </div>
+                <input
+                  placeholder="Title"
+                  class="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
+                />
+                <input
+                  placeholder="Description"
+                  class="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
+                />
+              </div>
+
+              <hr class="mt-4" />
+              <div class="flex flex-row-reverse p-3">
+                <div class="flex-initial pl-3">
+                  <button
+                    id="saveProjectBtn"
+                    type="button"
+                    class="flex items-center px-5 py-2.5 font-medium tracking-wide text-white capitalize bg-mainColor rounded-md hover:bg-gray-800 focus:outline-none focus:bg-gray-900 transition duration-300 transform active:scale-95 ease-in-out"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 0 24 24"
+                      width="24px"
+                      fill="#FFFFFF"
+                    >
+                      <path d="M0 0h24v24H0V0z" fill="none"></path>
+                      <path
+                        d="M5 5v14h14V7.83L16.17 5H5zm7 13c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-8H6V6h9v4z"
+                        opacity=".3"
+                      ></path>
+                      <path
+                        d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm2 16H5V5h11.17L19 7.83V19zm-7-7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zM6 6h9v4H6z"
+                      ></path>
+                    </svg>
+                    <span class="pl-2 mx-1">Save</span>
+                  </button>
+                </div>
+                <div class="flex-initial">
+                  <button
+                    id="exitAddPrj"
+                    type="button"
+                    class="flex items-center px-5 py-2.5 font-medium tracking-wide text-black capitalize rounded-md hover:bg-red-200 hover:fill-current hover:text-red-600 focus:outline-none transition duration-300 transform active:scale-95 ease-in-out"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 0 24 24"
+                      width="24px"
+                    >
+                      <path d="M0 0h24v24H0V0z" fill="none"></path>
+                      <path d="M8 9h8v10H8z" opacity=".3"></path>
+                      <path
+                        d="M15.5 4l-1-1h-5l-1 1H5v2h14V4zM6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9z"
+                      ></path>
+                    </svg>
+                    <span class="pl-2 mx-1">Delete</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./dist/jquery-3.7.1.min.js"></script>
     <script src="./dist/dash.js"></script>
-</body>
+  </body>
 </html>
